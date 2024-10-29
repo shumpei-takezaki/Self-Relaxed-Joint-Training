@@ -1,0 +1,19 @@
+model:
+  name: resnet18
+  pretrained: true
+  num_classes: 3
+
+optimizer:
+  name: Adam
+  lr: 1e-4
+  weight_decay: 1e-4
+
+scheduler:
+  name: MultiStepLR
+  gamma: 0.1
+  milestones: [90,120,140]
+
+training:
+  max_epoch: 150
+  batch_size: 64
+  metrics: [loss, acc, mae, rmse, f1, precision, recall, kappa]
