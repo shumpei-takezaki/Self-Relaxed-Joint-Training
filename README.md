@@ -39,7 +39,7 @@ $ python3.9 dataset/noisy_csv_5fold.py --noise_type=<noise type> --noise_rate=<n
 ```
 
 ## Experiments (5-fold-validation)
-Please see sample code `run_train.sh` \
+Please see sample code `run_train.sh` 
 
 Parameters:
 - `<noise type>`: [quasi, truncated]
@@ -47,10 +47,10 @@ Parameters:
 - `<method>`: [standard, sord, f_correction, reweight, mixup, cdr, garg, co_teaching, co_teaching_ours, co_teaching_abl, jocor, jocor_ours, codis, codis_ours]
 
 ```bash
-python3.9 script/method/train.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate --fold=1 
-python3.9 script/method/train.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate --fold=2 
-python3.9 script/method/train.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate --fold=3 
-python3.9 script/method/train.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate --fold=4
-python3.9 script/method/train.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate --fold=5
-python3.9 script/method/test.py --workdir=./expr/method --data_name=limuc --config=./script/method/config/method.yaml --noise_type=noise_type --noise_rate=noise_rate
+$ python3.9 script/<method>/train.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate> --fold=1 
+# You should run from fold 1 to fold 5 
+$ python3.9 script/method/test.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate>
 ```
+
+## Citation
+coming soon...
