@@ -47,7 +47,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='./script/standard/config/codis.yaml', help='(.yaml)')
+    parser.add_argument('--config', type=str, default='./script/codis/config/codis.yaml', help='(.yaml)')
     parser.add_argument('--workdir', type=str, default='./expr/codis/')
     parser.add_argument('--data_name', type=str, default='limuc')
     parser.add_argument('--noise_type', type=str, default='quasi', choices=['quasi', 'truncated'])

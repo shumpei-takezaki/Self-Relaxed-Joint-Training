@@ -37,7 +37,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='./script/standard/config/reweight.yaml', help='(.yaml)')
+    parser.add_argument('--config', type=str, default='./script/reweight/config/reweight.yaml', help='(.yaml)')
     parser.add_argument('--workdir', type=str, default='./expr/reweight/')
     parser.add_argument('--data_name', type=str, default='limuc')
     parser.add_argument('--noise_type', type=str, default='quasi', choices=['quasi', 'truncated'])

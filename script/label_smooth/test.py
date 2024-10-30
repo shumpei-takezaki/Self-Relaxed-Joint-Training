@@ -5,7 +5,7 @@ from omegaconf import OmegaConf
 import numpy as np
 
 def main(args):
-    workdir = Path(args.workdir).joinpath(args.data_name, f'{args.noise_type}-{args.noise_level}')
+    workdir = Path(args.workdir).joinpath(args.data_name, f'{args.noise_type}-{args.noise_rate}')
     config = OmegaConf.load(args.config)
 
     results = {'train': {}, 'val': {}, 'test':{}}
@@ -22,7 +22,7 @@ def main(args):
             for metric in config.training.metrics:
                 results[mode][metric].append(np.mean(k_results[mode][metric][-10:]))
 
-        log = f'{args.data_name}-{args.noise_type}-{args.noise_level}\n'
+        log = f'{args.data_name}-{args.noise_type}-{args.noise_rate}\n'
         for mode in ['train','val','test']:
             log += f'{mode} results ->'
             for metric in config.training.metrics:
@@ -37,8 +37,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='./script/f_correction/config/f_correction.yaml', help='(.yaml)')
-    parser.add_argument('--workdir', type=str, default='./expr/f_correction/')
+    parser.add_argument('--config', type=str, default='./script/label_smooth/config/label_smooth.yaml', help='(.yaml)')
     parser.add_argument('--data_name', type=str, default='limuc')
     parser.add_argument('--noise_type', type=str, default='quasi', choices=['quasi', 'truncated'])
     parser.add_argument('--noise_rate', type=float, default=0.2, choices=[0.2,0.4])
