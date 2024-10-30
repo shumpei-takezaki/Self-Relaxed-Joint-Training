@@ -41,7 +41,7 @@ Parameters:
 
 ```bash
 $ chmod +x run_train.sh
-$ sh NOISE_TYPE=quasi NOISE_RATE=0.2 METHOD=co_teaching_ours run_train.sh
+$ NOISE_TYPE=quasi NOISE_RATE=0.2 METHOD=co_teaching_ours run_train.sh
 ```
 
 ## Citation
