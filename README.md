@@ -33,7 +33,7 @@ $ python3.9 dataset/data_info_limuc.py
 # <noise type> = {quasi, truncated}
 # <nosie rate> = {0.2 , 0.4}
 $ python3.9 dataset/csv_5fold.py
-$ python3.9 dataset/noisy_csv_5fold.py --noise_type=\<noise type\> --noise_rate=\<noise rate\> 
+$ python3.9 dataset/noisy_csv_5fold.py --noise_type=<noise type> --noise_rate=<noise rate> 
 ```
 
 ## Experiments (5-fold-validation)
