@@ -19,8 +19,8 @@ $ sh docker/run.sh
 $ sh docker/exec.sh
 ```
 
-## Download clean dataset ([LIMUC](https://zenodo.org/records/5827695#.YuNBddLP1hH)) and create noisy dataset
-Donwload dataset and are create noisy label. Please see sample code `run_dataset.sh`
+## Download clean dataset ([LIMUC](https://zenodo.org/records/5827695#.YuNBddLP1hH)) and creation noisy dataset
+Prepare dataset. Please see sample code `run_dataset.sh`
 
 Parameters:
 - `NOISE_TYPE`: [quasi, truncated]
