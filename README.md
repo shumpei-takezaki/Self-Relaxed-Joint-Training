@@ -49,7 +49,7 @@ Parameters:
 ```bash
 $ python3.9 script/<method>/train.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate> --fold=1 
 # You should run from fold 1 to fold 5 
-$ python3.9 script/method/test.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate>
+$ python3.9 script/<method>/test.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate>
 ```
 
 ## Citation
