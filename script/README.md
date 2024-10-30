@@ -1,6 +1,6 @@
 ## Proposed methods
 - `co_teaching_ours`: [Co-teaching](https://proceedings.neurips.cc/paper_files/paper/2018/file/a19744e268754fb0148b017647355b7b-Paper.pdf) with our framework
-- `jocor_ours`: [JoCor]https://openaccess.thecvf.com/content_CVPR_2020/papers/Wei_Combating_Noisy_Labels_by_Agreement_A_Joint_Training_Method_with_CVPR_2020_paper.pdf) with our framework
+- `jocor_ours`: [JoCor](https://openaccess.thecvf.com/content_CVPR_2020/papers/Wei_Combating_Noisy_Labels_by_Agreement_A_Joint_Training_Method_with_CVPR_2020_paper.pdf) with our framework
 - `codis_ours`: [CoDis](https://openaccess.thecvf.com/content/ICCV2023/papers/Xia_Combating_Noisy_Labels_with_Sample_Selection_by_Mining_High-Discrepancy_Examples_ICCV_2023_paper.pdf) with our framework
 - *`co_teaching_abl`: Ablation study for Co-teaching with our framework
 
