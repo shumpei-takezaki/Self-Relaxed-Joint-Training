@@ -20,36 +20,28 @@ $ sh docker/exec.sh
 ```
 
 ## Download clean dataset ([LIMUC](https://zenodo.org/records/5827695#.YuNBddLP1hH)) and create noisy dataset
-Please see sample code `run_dataset.sh`
+Donwload dataset and are create noisy label. Please see sample code `run_dataset.sh`
 
-### Download clean dataset
-```bash
-$ python3.9 dataset/download_limuc.py
-$ python3.9 dataset/data_info_limuc.py # Informatin of image path and label for creating noisy dataset 
-```
-
-### Create noisy dataset
 Parameters:
-- `<noise type>`: [quasi, truncated]
-- `<noise rate>`: [0.2, 0.4]
+- `NOISE_TYPE`: [quasi, truncated]
+- `NOISE_RATE`: [0.2, 0.4]
 
 ```bash
-$ python3.9 dataset/csv_5fold.py
-$ python3.9 dataset/noisy_csv_5fold.py --noise_type=<noise type> --noise_rate=<noise rate> 
+$ chmod +x run_dataset.sh
+$ NOISE_TYPE=quasi NOISE_RATE=0.2 ./run_dataset.sh 
 ```
 
 ## Experiments (5-fold-validation)
-Please see sample code `run_train.sh` 
+Trraining and evaluation. Please see sample code `run_train.sh` 
 
 Parameters:
-- `<noise type>`: [quasi, truncated]
-- `<noise rate>`: [0.2, 0.4]
-- `<method>`: [standard, sord, f_correction, reweight, mixup, cdr, garg, co_teaching, co_teaching_ours, co_teaching_abl, jocor, jocor_ours, codis, codis_ours]
+- `NOISE_TYPE`: [quasi, truncated]
+- `NOISE_RATE`: [0.2, 0.4]
+- `METHOD`: [standard, sord, f_correction, reweight, mixup, cdr, garg, co_teaching, co_teaching_ours, co_teaching_abl, jocor, jocor_ours, codis, codis_ours]
 
 ```bash
-$ python3.9 script/<method>/train.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate> --fold=1 
-# You should run from fold 1 to fold 5 
-$ python3.9 script/<method>/test.py --workdir=./expr/<method> --data_name=limuc --config=./script/<method>/config/<method>.yaml --noise_type=<noise_type> --noise_rate=<noise_rate>
+$ chmod +x run_train.sh
+$ sh NOISE_TYPE=quasi NOISE_RATE=0.2 METHOD=co_teaching_ours run_train.sh
 ```
 
 ## Citation

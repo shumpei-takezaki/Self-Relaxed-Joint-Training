@@ -1,6 +1,12 @@
-python3.9 script/co_teaching_ours/train.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2 --fold=1 
-python3.9 script/co_teaching_ours/train.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2 --fold=2 
-python3.9 script/co_teaching_ours/train.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2 --fold=3 
-python3.9 script/co_teaching_ours/train.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2 --fold=4
-python3.9 script/co_teaching_ours/train.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2 --fold=5
-python3.9 script/co_teaching_ours/test.py --workdir=./expr/co_teaching_ours --data_name=limuc --config=./script/co_teaching_ours/config/co_teaching_ours.yaml --noise_type=quasi --noise_rate=0.2
+NOISE_TYPE=${NOISE_TYPE:-"quasi"}
+NOISE_RATE=${NOISE_RATE:-0.2}
+METHOD=${METHOD:-"co_teaching_ours"}
+
+# train
+for FOLD in 1 2 3 4 5
+do
+    python3.9 script/$METHOD/train.py --workdir=./expr/$METHOD --data_name=limuc --config=./script/$METHOD/config/$METHOD.yaml --noise_type=$NOISE_TYPE --noise_rate=$NOISE_RATE --fold=$FOLD
+done
+
+# test
+python3.9 script/$METHOD/test.py --workdir=./expr/$METHOD --data_name=limuc --config=./script/$METHOD/config/$METHOD.yaml --noise_type=$NOISE_TYPE --noise_rate=$NOISE_RATE
