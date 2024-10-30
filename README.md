@@ -37,7 +37,7 @@ Trraining and evaluation. Please see sample code `run_train.sh`
 Parameters:
 - `NOISE_TYPE`: [quasi, truncated]
 - `NOISE_RATE`: [0.2, 0.4]
-- `METHOD`: [standard, sord, f_correction, reweight, mixup, cdr, garg, co_teaching, co_teaching_ours, co_teaching_abl, jocor, jocor_ours, codis, codis_ours]
+- `METHOD`: [standard, sord, f_correction, reweight, mixup, cdr, garg, co_teaching, **co_teaching_ours**, co_teaching_abl, jocor, **jocor_ours**, codis, **codis_ours**]
 
 ```bash
 $ chmod +x run_train.sh
