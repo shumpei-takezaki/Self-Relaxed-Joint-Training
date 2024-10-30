@@ -1,4 +1,4 @@
-# Self-Relaxed Joint Training: Sample Selection for Severity Estimation with Ordinal Noisy Labels [[S.Takezaki+, WACV2025](https://arxiv.org/submit/5961885)]
+# Self-Relaxed Joint Training: Sample Selection for Severity Estimation with Ordinal Noisy Labels [[S.Takezaki+, WACV2025](http://arxiv.org/abs/2410.21885)]
 
 Shumpei Takezaki, Kiyohito Tanaka, Seiichi Uchida
 
