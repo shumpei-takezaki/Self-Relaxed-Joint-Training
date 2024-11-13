@@ -54,10 +54,10 @@ def get_loader(csv_file, batch_size, noisy=True, train=True, seed=777):
     dl = DataLoader(
         dataset=ds,
         batch_size=batch_size,
-        shuffle=True if not train else False,
+        shuffle=True if train else False,
         num_workers=8,
         pin_memory=True,
-        drop_last=True if not train else False,
+        drop_last=True iftrain else False,
         worker_init_fn=worker_init_fn(seed)
     )
     return ds, dl
