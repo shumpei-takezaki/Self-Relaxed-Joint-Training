@@ -57,7 +57,7 @@ def get_loader(csv_file, batch_size, noisy=True, train=True, seed=777):
         shuffle=True if train else False,
         num_workers=8,
         pin_memory=True,
-        drop_last=True iftrain else False,
+        drop_last=True if train else False,
         worker_init_fn=worker_init_fn(seed)
     )
     return ds, dl
