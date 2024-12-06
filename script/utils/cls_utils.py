@@ -140,30 +140,6 @@ def js_loss_compute(pred, soft_targets, reduce=False):
     else:
         return torch.sum(js, 1)
 
-def gen_forget_rate(noise_type, noise_level):
-    if noise_type == 'inverse':
-        if noise_level == 0.1:
-            return 0.2
-        elif noise_level == 0.2:
-            return 0.4
-        elif noise_level == 0.15:
-            return 0.3
-        elif noise_level == 0.075:
-            return 0.15
-        
-    elif noise_type == 'neighbor':
-        if noise_level == 0.15:
-            return 0.2
-        elif noise_level == 0.3:
-            return 0.4
-        elif noise_level == 0.2:
-            return 0.3
-        elif noise_level == 0.1:
-            return 0.15
-        
-    elif noise_type == 'ideal':
-        return 0.4
-
 def gen_forget_schedule(forget_rate, n_epoch, num_gradual):
     rate_schedule = np.ones(n_epoch) * forget_rate
     rate_schedule[:num_gradual] = np.linspace(0, forget_rate, num_gradual)
