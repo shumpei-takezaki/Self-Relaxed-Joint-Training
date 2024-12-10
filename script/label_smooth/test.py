@@ -38,6 +38,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default='./script/label_smooth/config/label_smooth.yaml', help='(.yaml)')
+    parser.add_argument('--workdir', type=str, default='./expr/label_smooth/')
     parser.add_argument('--data_name', type=str, default='limuc')
     parser.add_argument('--noise_type', type=str, default='quasi', choices=['quasi', 'truncated'])
     parser.add_argument('--noise_rate', type=float, default=0.2, choices=[0.2,0.4])
