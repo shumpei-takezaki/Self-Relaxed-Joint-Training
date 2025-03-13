@@ -45,7 +45,7 @@ $ NOISE_TYPE=quasi NOISE_RATE=0.2 METHOD=co_teaching_ours ./run_train.sh
 ```
 
 ## Citation
-```bash
+```bibtex
 @InProceedings{Takezaki_2025_WACV,
     author    = {Takezaki, Shumpei and Tanaka, Kiyohito and Uchida, Seiichi},
     title     = {Self-Relaxed Joint Training: Sample Selection for Severity Estimation with Ordinal Noisy Labels},
